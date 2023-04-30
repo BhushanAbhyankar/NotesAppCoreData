@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol CoreDataOperationsProtocol {
     
     func saveDataToDatabase(item: Note) async throws
     func getDataFromDatabase() async -> [Notes]
+    func removeNote(indexSet: IndexSet, results: FetchedResults<Notes>) async
     
 }

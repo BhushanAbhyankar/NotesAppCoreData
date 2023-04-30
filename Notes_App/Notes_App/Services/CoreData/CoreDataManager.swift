@@ -7,14 +7,17 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 
 class CoreDataManager: CoreDataOperationsProtocol {
     
+    let context = PersistenceController.shared.container
+    
     
     func saveDataToDatabase(item: Note) async throws {
         
-        try await PersistenceController.shared.container.performBackgroundTask{ (privateContext) in
+        try await context.performBackgroundTask{ (privateContext) in
             
             let entity = Notes(context: privateContext)
             entity.title = item.title
@@ -37,13 +40,38 @@ class CoreDataManager: CoreDataOperationsProtocol {
     
     func getDataFromDatabase() async -> [Notes] {
         
-        await PersistenceController.shared.container.performBackgroundTask({ (privateContext) in
+        await context.performBackgroundTask({ (privateContext) in
             
             let notesFetchRequest = Notes.fetchRequest()
             let result = (try? privateContext.fetch(notesFetchRequest)) ?? []
             return result
             
         })
+        
+    }
+    
+    func removeNote(indexSet: IndexSet, results: FetchedResults<Notes>) async {
+        
+        
+        await context.performBackgroundTask({ (privateContext) in
+            
+            guard let index = indexSet.first else {return}
+            let entity = results[index]
+            privateContext.delete(entity)
+            
+            try? privateContext.save()
+        })
+        
+    }
+    
+    func removeNote2(indexSet: IndexSet, results: FetchedResults<Notes>, context: NSManagedObjectContext) async {
+        
+        
+        guard let index = indexSet.first else {return}
+        let entity = results[index]
+        context.delete(entity)
+        
+        try? context.save()
         
     }
     

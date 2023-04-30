@@ -19,6 +19,10 @@ struct ContentView: View {
     @FetchRequest(entity: Notes.entity(), sortDescriptors: [])
     var results: FetchedResults<Notes>
     
+    
+    
+    var coreDataManager: CoreDataManager
+    
     var body: some View {
         
         NavigationStack(path: $path){
@@ -28,6 +32,10 @@ struct ContentView: View {
                         
                         VStack{
                             Text(note.title ?? "")
+                        }
+                    }.onDelete { indexSet in
+                        Task {
+                            await coreDataManager.removeNote2(indexSet: indexSet, results: results, context: viewContext)
                         }
                     }
                 
@@ -67,7 +75,7 @@ struct ContentView: View {
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            ContentView(coreDataManager: CoreDataManager()).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         }
     }
 
