@@ -38,7 +38,7 @@ struct NoteCreator: View {
                     // Print the db file path
                     guard let url = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {return}
                     
-                    let sqlitePath = url.appendingPathComponent("Pokemon_CoreData.sqlite")
+                    let sqlitePath = url.appendingPathComponent("Notes_App.sqlite")
                     print(sqlitePath)
                 }
                 dismiss()

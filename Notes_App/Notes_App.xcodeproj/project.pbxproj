@@ -42,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC18246929FEB60900C1DADE /* Notes_App V2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Notes_App V2.xcdatamodel"; sourceTree = "<group>"; };
 		DC8355C129FADBB5003D7840 /* Notes_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC8355C429FADBB5003D7840 /* Notes_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes_AppApp.swift; sourceTree = "<group>"; };
 		DC8355C629FADBB5003D7840 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -654,9 +655,10 @@
 		DC8355CF29FADBB6003D7840 /* Notes_App.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DC18246929FEB60900C1DADE /* Notes_App V2.xcdatamodel */,
 				DC8355D029FADBB6003D7840 /* Notes_App.xcdatamodel */,
 			);
-			currentVersion = DC8355D029FADBB6003D7840 /* Notes_App.xcdatamodel */;
+			currentVersion = DC18246929FEB60900C1DADE /* Notes_App V2.xcdatamodel */;
 			path = Notes_App.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -18,7 +18,7 @@ class CoreDataManager: CoreDataOperationsProtocol {
             
             let entity = Notes(context: privateContext)
             entity.title = item.title
-            entity.body = item.body
+            entity.noteBody = item.body
             entity.timeStamp = item.timeStamp
             
             
