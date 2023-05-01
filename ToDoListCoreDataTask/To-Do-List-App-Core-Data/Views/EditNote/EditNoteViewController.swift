@@ -19,7 +19,7 @@ class EditNoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textView.text = note?.text
+        textView.text = note?.textNameMigrate
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,7 +54,7 @@ class EditNoteViewController: UIViewController {
 // This function waits until the user finishes editing before saving the note. This is a delegate that prevents the UI from slowing down
 extension EditNoteViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
-        note?.text = textView.text
+        note?.textNameMigrate = textView.text
         if note?.title.isEmpty ?? true {
             deleteNote()
         } else {

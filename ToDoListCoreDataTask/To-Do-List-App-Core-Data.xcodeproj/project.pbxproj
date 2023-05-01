@@ -24,6 +24,7 @@
 		85752BBE29FBE52000F541C3 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752BBC29FBE52000F541C3 /* Note+CoreDataClass.swift */; };
 		85752BBF29FBE52000F541C3 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752BBD29FBE52000F541C3 /* Note+CoreDataProperties.swift */; };
 		85752BC129FBE8D200F541C3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752BC029FBE8D200F541C3 /* CoreDataManager.swift */; };
+		85752C0A2A00258000F541C3 /* MigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752C092A00258000F541C3 /* MigrationPolicy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,9 @@
 		85752BBC29FBE52000F541C3 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		85752BBD29FBE52000F541C3 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		85752BC029FBE8D200F541C3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		85752C082A001BB300F541C3 /* To_Do_List_App_Core_Data 2_Version_Two.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "To_Do_List_App_Core_Data 2_Version_Two.xcdatamodel"; sourceTree = "<group>"; };
+		85752C092A00258000F541C3 /* MigrationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationPolicy.swift; sourceTree = "<group>"; };
+		85752C0B2A002B2800F541C3 /* To_Do_List_App_Core_Data Verson_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "To_Do_List_App_Core_Data Verson_2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 				85752BBC29FBE52000F541C3 /* Note+CoreDataClass.swift */,
 				85752BBD29FBE52000F541C3 /* Note+CoreDataProperties.swift */,
 				85752BC029FBE8D200F541C3 /* CoreDataManager.swift */,
+				85752C092A00258000F541C3 /* MigrationPolicy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 			files = (
 				85752B7F29FBD52300F541C3 /* ViewController.swift in Sources */,
 				85752B7B29FBD52300F541C3 /* AppDelegate.swift in Sources */,
+				85752C0A2A00258000F541C3 /* MigrationPolicy.swift in Sources */,
 				85752BB829FBDE6E00F541C3 /* ListNoteTableViewCell.swift in Sources */,
 				85752B8529FBD52300F541C3 /* Note.xcdatamodeld in Sources */,
 				85752BB329FBDA4500F541C3 /* EditNoteViewController.swift in Sources */,
@@ -673,9 +679,11 @@
 		85752B8329FBD52300F541C3 /* Note.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				85752C0B2A002B2800F541C3 /* To_Do_List_App_Core_Data Verson_2.xcdatamodel */,
+				85752C082A001BB300F541C3 /* To_Do_List_App_Core_Data 2_Version_Two.xcdatamodel */,
 				85752B8429FBD52300F541C3 /* To_Do_List_App_Core_Data.xcdatamodel */,
 			);
-			currentVersion = 85752B8429FBD52300F541C3 /* To_Do_List_App_Core_Data.xcdatamodel */;
+			currentVersion = 85752C082A001BB300F541C3 /* To_Do_List_App_Core_Data 2_Version_Two.xcdatamodel */;
 			path = Note.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -48,7 +48,7 @@ extension CoreDataManager {
     func createNote() -> Note {
         let note = Note(entity: NSEntityDescription.entity(forEntityName: "Note", in: viewContext)!, insertInto: viewContext)
         note.id = UUID()
-        note.text = ""
+        note.textNameMigrate = ""
         note.lastUpdated = Date()
         save()
         

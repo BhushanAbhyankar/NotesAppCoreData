@@ -156,7 +156,7 @@ extension ListNotesViewController: UISearchControllerDelegate, UISearchBarDelega
     
     func search(_ query: String) {
         if query.count >= 1 {
-            filteredNotes = allNotes.filter { $0.text.lowercased().contains(query.lowercased()) }
+            filteredNotes = allNotes.filter { $0.textNameMigrate.lowercased().contains(query.lowercased()) }
         } else{
             filteredNotes = allNotes
         }
