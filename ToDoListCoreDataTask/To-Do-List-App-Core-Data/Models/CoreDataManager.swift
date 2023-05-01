@@ -18,7 +18,8 @@ class CoreDataManager {
     }
     
     init(modelName: String) {
-        persistentContainer = NSPersistentContainer(name: modelName)
+        persistentContainer = NSPersistentContainer(name: "Note")
+        print(persistentContainer.persistentStoreDescriptions.first?.url ?? "No URL found")
         // Managed Object Context is like a sheet of paper torn out of a book. You can modify the contents (data) of a sheet of paper and the data wont be stored until you put it back into the book, doesnt affect your UI
     }
     
