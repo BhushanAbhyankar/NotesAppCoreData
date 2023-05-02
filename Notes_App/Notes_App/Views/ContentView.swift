@@ -30,9 +30,18 @@ struct ContentView: View {
                 List {
                     ForEach(results){ note in
                         
-                        VStack{
-                            Text(note.title ?? "")
+                        
+                        NavigationLink {
+                            NoteCreator(noteTitle: note.title ?? "", noteBody: note.noteBody ?? "")
+                        } label: {
+                            VStack{
+                                Text(note.title ?? "")
+                            }
                         }
+
+                        
+                        
+                        
                     }.onDelete { indexSet in
                         Task {
                             await coreDataManager.removeNote2(indexSet: indexSet, results: results, context: viewContext)
@@ -40,7 +49,8 @@ struct ContentView: View {
                     }
                 
                     
-                }
+                }.scrollContentBackground(.hidden)
+                .padding(20)
                 Button {
                     sheetShowing.toggle()
                 } label: {

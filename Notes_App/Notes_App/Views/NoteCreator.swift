@@ -12,12 +12,13 @@ struct NoteCreator: View {
     
     @State var noteTitle: String
     @State var noteBody: String
-    let noteCreatorViewmodel = NoteCreatorViewModel()
+    let noteCreatorViewmodel = NoteCreatorViewModel(manager: CoreDataManager())
     
     
     var body: some View {
         
         VStack{
+            
             TextField("Enter Title", text: $noteTitle)
                 .textFieldStyle(.roundedBorder)
                 .padding()
@@ -27,6 +28,7 @@ struct NoteCreator: View {
                 .frame(width: 350, height: 350)
                 .overlay(TextEditor(text: $noteBody)
                     .border(.black))
+            
             
             
             
