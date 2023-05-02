@@ -26,15 +26,14 @@ class CoreDataManager: CoreDataProtocol {
     }
     
     func read() async throws -> [Note] {
-       try await container.performBackgroundTask({ viewContext in
-            let notesRequests = Note.fetchRequest()
-            do {
-                let data = try viewContext.fetch(notesRequests)
-                return data
-            } catch let error {
-                throw error
-            }
-        })
+        let notesRequests = Note.fetchRequest()
+//        notesRequests.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: true)]
+        do {
+            let data = try container.viewContext.fetch(notesRequests)
+            return data
+        } catch let error {
+            throw error
+        }
     }
     
     func delete(note: Note) async {

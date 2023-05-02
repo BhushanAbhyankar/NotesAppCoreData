@@ -14,7 +14,9 @@ struct NewNote {
     var timestamp: Date
 }
 
+@MainActor
 class NoteViewModel: ObservableObject {
+    @Published var notes: [Note] = []
     var noteManager: CoreDataProtocol
     
     init(noteManager: CoreDataProtocol) {
@@ -27,5 +29,9 @@ class NoteViewModel: ObservableObject {
         } catch let error {
             throw error
         }
+    }
+    
+    func read() async {
+        notes = try! await noteManager.read()
     }
 }

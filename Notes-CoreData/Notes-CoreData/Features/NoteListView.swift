@@ -7,15 +7,17 @@
 
 import SwiftUI
 import CoreData
+import ExytePopupView
 
 struct NoteListView: View {
+    
     @State private var showForm: Bool = false
     @StateObject var noteViewModel: NoteViewModel
     @Environment(\.managedObjectContext) private var viewContext
-    
-    var fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
-    @FetchRequest(entity: Note.entity(), sortDescriptors: [])
-    var result: FetchedResults<Note>
+//
+//    var fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+//    @FetchRequest(entity: Note.entity(), sortDescriptors: [])
+//    var result: FetchedResults<Note>
     
     var body: some View {
         NavigationStack {
@@ -25,14 +27,12 @@ struct NoteListView: View {
                     .onTapGesture {
                         showForm.toggle()
                     }
-                    .sheet(isPresented: $showForm) {
-                        NoteCreateView(noteViewModel: NoteViewModel(noteManager: CoreDataManager()), showForm: $showForm)
-                    }
             }.padding()
+               
             
             
             List {
-                ForEach(result) { note in
+                ForEach(noteViewModel.notes) { note in
                     HStack {
                         VStack(alignment: .leading) {
                             Text(note.title ?? "")
@@ -50,11 +50,18 @@ struct NoteListView: View {
                     }
                     .contentShape(Rectangle())
                 }
-                .task {
-                    let data = try? await noteViewModel.noteManager.read()
-                    print(data ?? [])
-                }
             }
+            .task {
+                await noteViewModel.read()
+            }
+        }
+//        .popup(isPresented: $showForm, view: {
+//            NoteCreateView(noteViewModel: NoteViewModel(noteManager: CoreDataManager()), showForm: $showForm)
+//        }, customize: {
+//            $0.autohideIn(2)
+//        })
+        .sheet(isPresented: $showForm) {
+            NoteCreateView(noteViewModel: NoteViewModel(noteManager: CoreDataManager()), showForm: $showForm)
         }
     }
 }

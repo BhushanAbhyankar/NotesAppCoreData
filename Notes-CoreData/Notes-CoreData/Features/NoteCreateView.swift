@@ -16,12 +16,8 @@ struct NoteCreateView: View {
     
     private func save() async throws {
         let note = NewNote(title: title, body: desc, timestamp: Date())
-//        note.title = title
-//        note.body = desc
-//        note.timestamp = Date()
         do {
             try await noteViewModel.saveNote(note: note)
-//            try viewContext.save()
         } catch let error {
             throw error
         }

@@ -1,16 +1,20 @@
 PODS:
+  - ExytePopupView (2.2.1)
   - SwiftLint (0.51.0)
 
 DEPENDENCIES:
+  - ExytePopupView
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - ExytePopupView
     - SwiftLint
 
 SPEC CHECKSUMS:
+  ExytePopupView: b545609bdb11f428408f88fdd4725d94565b1fec
   SwiftLint: 1b7561918a19e23bfed960e40759086e70f4dba5
 
-PODFILE CHECKSUM: 0dbbe697cda56d20c6d5f0c555ad1a3ba50314f8
+PODFILE CHECKSUM: a1a6f3aa33de283e8099ff47eb46ad1e3b0f9341
 
 COCOAPODS: 1.12.1
