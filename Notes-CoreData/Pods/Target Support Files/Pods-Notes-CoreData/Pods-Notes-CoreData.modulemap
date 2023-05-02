@@ -1,0 +1,6 @@
+framework module Pods_Notes_CoreData {
+  umbrella header "Pods-Notes-CoreData-umbrella.h"
+
+  export *
+  module * { export * }
+}
