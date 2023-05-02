@@ -27,7 +27,7 @@ class ListNotesViewController: UIViewController {
     
     private var allNotes: [Note] = [] {
         didSet {
-            notesCountLbl.text = "\(allNotes.count) \(allNotes.count == 1 ? "Note" : "Notes")"
+            notesCountLbl.text = allNotes.count.description
             filteredNotes = allNotes
         }
     }

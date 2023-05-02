@@ -50,8 +50,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Dxa-Ck-2VK">
-                                                    <rect key="frame" x="9.9999999999999964" y="10" width="333" height="34"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Dxa-Ck-2VK">
+                                                    <rect key="frame" x="10" y="10" width="333" height="34"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzW-E7-JMf">
                                                             <rect key="frame" x="0.0" y="0.0" width="333" height="17.666666666666668"/>
@@ -106,7 +106,7 @@
                                 <rect key="frame" x="0.0" y="864" width="393" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iiy-xE-c6X">
-                                        <rect key="frame" x="174.33333333333334" y="19" width="44.666666666666657" height="14.333333333333336"/>
+                                        <rect key="frame" x="174.33333333333334" y="19" width="44.666666666666657" height="14"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -137,7 +137,7 @@
                                 <rect key="frame" x="-11" y="766" width="414" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6a4-fW-QrW">
-                                        <rect key="frame" x="185" y="10" width="44.5" height="20"/>
+                                        <rect key="frame" x="185.33333333333334" y="10" width="44.666666666666657" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -186,7 +186,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Notes" id="3WK-lE-IiV"/>
                     <connections>
-                        <outlet property="notesCountLbl" destination="Iiy-xE-c6X" id="CcP-jL-QMi"/>
+                        <outlet property="notesCountLbl" destination="6a4-fW-QrW" id="XHO-th-bJY"/>
                         <outlet property="tableView" destination="y0V-tq-krK" id="7L7-be-xYH"/>
                     </connections>
                 </viewController>
